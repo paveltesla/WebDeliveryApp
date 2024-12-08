@@ -1,0 +1,31 @@
+@model IEnumerable<WebDeliveryApp.Models.Delivery>
+
+@{
+    ViewData["Title"] = "Deliveries List";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Delivery Method</th>
+        <th>Order</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var delivery in Model)
+    {
+        <tr>
+            <td>@delivery.id</td>
+            <td>@delivery.deliveryMethod?.method</td>
+            <td>@delivery.orders?.id</td>
+            <td>
+                <a href="@Url.Action("Details", "Delivery", new { id = delivery.id })" class="btn btn-info">View</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

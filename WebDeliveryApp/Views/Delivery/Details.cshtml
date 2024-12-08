@@ -1,0 +1,19 @@
+@model WebDeliveryApp.Models.Delivery
+
+@{
+    ViewData["Title"] = "Delivery Details";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <h3>Delivery ID: @Model.id</h3>
+    <p><strong>Delivery Method:</strong> @Model.deliveryMethod?.method</p>
+    <p><strong>Order ID:</strong> @Model.orders?.id</p>
+
+    <h4>Additional Details</h4>
+    <!-- Добавьте другие свойства доставки, если они существуют -->
+    <p><strong>Order Date:</strong> @Model.orders?.date</p>
+</div>
+
+<a href="@Url.Action("Index", "Delivery")" class="btn btn-secondary">Back to list</a>

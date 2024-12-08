@@ -6,26 +6,18 @@ namespace WebDeliveryApp.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
-    {
-        _logger = logger;
-    }
-
     public IActionResult Index()
     {
-        return View();
+        return View(); // Возвращает главную страницу
     }
 
-    public IActionResult Privacy()
+    public IActionResult About()
     {
-        return View();
+        return View(); // Страница "О нас"
     }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
+    public IActionResult Contact()
     {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        return View(); // Страница "Контакты"
     }
 }
